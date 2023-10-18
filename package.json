@@ -1,18 +1,32 @@
 {
   "name": "talhakerpicci.com",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next lint && next build",
+    "start": "next start",
+    "export": "next export"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "autoprefixer": "^10.4.16",
+    "eslint": "^8.51.0",
+    "eslint-config-next": "^13.5.5",
+    "framer-motion": "^10.16.4",
     "next": "^13.5.4",
     "postcss": "^8.4.31",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
     "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "@portabletext/react": "^3.0.4",
+    "@types/node": "20.8.6",
+    "@types/react": "18.2.29",
+    "@types/refractor": "^3.0.2",
+    "next-themes": "^0.2.1",
+    "react-refractor": "^2.1.7",
+    "typescript": "^5.2.2"
   }
 }
