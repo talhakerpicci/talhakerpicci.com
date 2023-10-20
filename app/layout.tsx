@@ -1,5 +1,4 @@
 import "@/app/styles/globals.css";
-import Script from "next/script";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import incognito from "./font/font";
@@ -15,11 +14,9 @@ const inter = Inter({
 
 const options = {
   title: "Talha Kerpicci | Software Developer",
-  description:
-    "Talha Kerpicci is a Software Developer and Technical Writer who is passionate about building solutions and contributing to open source communities",
+  description: "Talha Kerpicci is a Software Developer who is passionate about building cool apps and contributing to open source communities",
   url: "https://talhakerpicci.com",
-  ogImage:
-    "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/home.png",
+  ogImage: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/home.png",
 };
 
 export const metadata: Metadata = {
