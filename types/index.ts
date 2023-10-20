@@ -11,7 +11,6 @@ export type ProfileType = {
   fullBio: string;
   location: string;
   resumeURL: string;
-  usage: string;
 };
 
 export type JobType = {
