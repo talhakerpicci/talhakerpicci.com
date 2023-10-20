@@ -47,7 +47,6 @@ export const userProfile: ProfileType = {
     `,
     location: "Istanbul, Turkey",
     resumeURL: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/Talha-Kerpicci-CV.pdf",
-    usage: "Usage or other information goes here.",
 };
 
 export const jobs: JobType[] = [
