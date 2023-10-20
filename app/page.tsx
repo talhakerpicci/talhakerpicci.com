@@ -5,7 +5,7 @@ import HeroSvg from "./icons/HeroSvg";
 import { Slide } from "./animation/Slide";
 import { userProfile } from './data/data';
 
-export default async function Home() {
+export default function Home() {
   return (
     <main className="max-w-7xl mx-auto md:px-16 px-6 lg:mt-32 mt-20">
       <section className="flex xl:flex-row flex-col xl:items-center items-start xl:justify-center justify-between gap-x-12 mb-16">
