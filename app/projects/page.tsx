@@ -5,8 +5,6 @@ import type { ProjectType } from "@/types";
 import EmptyState from "../components/shared/EmptyState";
 import { Slide } from "../animation/Slide";
 
-// https://github.com/sandoche/Mobile-app-landingpage-template
-
 export const metadata: Metadata = {
   title: "Projects | Talha Kerpicci",
   metadataBase: new URL("https://talhakerpicci.com/projects"),
