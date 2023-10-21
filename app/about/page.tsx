@@ -4,7 +4,6 @@ import type { ProfileType } from "@/types";
 import { PortableText } from "@portabletext/react";
 import { BiEnvelope, BiLinkExternal, BiSolidDownload } from "react-icons/bi";
 import { CustomPortableText } from "../components/shared/CustomPortableText";
-import Usage from "../components/pages/Usage";
 import { Slide } from "../animation/Slide";
 import { userProfile } from "../data/data";
 
@@ -35,11 +34,28 @@ export default async function About() {
                 I&apos;m {userProfile.fullName}. I live in {userProfile.location}, where I
                 build cool stuff.
               </h1>
-
               <div className="dark:text-zinc-400 text-zinc-600 leading-relaxed">
-                <div dangerouslySetInnerHTML={{
-                  __html: userProfile.fullBio
-                }} />
+                Hey there! My name is Talha Kerpicci. I'm currently working at Borda Technology as a Flutter Developer.
+                <br /><br />
+                I began my coding journey with C#, developing various desktop applications. This led me to explore the Unity Game Engine later in my journey.
+                <br /><br />
+                Later, my interest in Python guided me towards web scraping, and I built some useful tools that I use regularly. As I ventured further into the Python ecosystem, I adopted Flask to design backend solutions, providing a robust foundation for my applications.
+                <br /><br />
+                Wanting to dive into mobile app development, I learned Flutter and have since created a range of apps, including one I'm particularly proud of,&nbsp;
+                <a href="/projects/awesome-app" className="transition-colors duration-300">Simple Library</a>.
+                <br /><br />
+                Now, I'm delving into Go, aiming to work on the backend side of things. My current project is an app named&nbsp;
+                <a href="https://movieparadise.app/" className="transition-colors duration-300">Movie Paradise</a>.
+                <br /><br />
+                Outside of coding, I'm passionate about Linux and the open-source community. I'm always keen to learn and grow in both programming and Linux. Oh, and I use Arch btw =)
+                <br /><br />
+                <h1 className="text-2xl font-bold">Hobbies</h1>
+                <ul className="list-disc pl-5">
+                  <li className="mb-1">Home Lab</li>
+                  <li className="mb-1">Reading</li>
+                  <li className="mb-1">Calisthenics</li>
+                  <li className="mb-1">Computer Games</li>
+                </ul>
               </div>
             </Slide>
           </div>
@@ -91,9 +107,6 @@ export default async function About() {
             </Slide>
           </aside>
         </section>
-        <Slide delay={0.14}>
-          <Usage />
-        </Slide>
       </div>
     </main>
   );
