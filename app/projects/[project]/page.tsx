@@ -21,6 +21,7 @@ const fallbackImage: string =
   "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/projects.png";
 
 // Dynamic metadata for SEO
+//TODO:
 /* export function generateMetadata({ params }: Props): Metadata {
   const slug = params.project;
   const project = projects[0];
