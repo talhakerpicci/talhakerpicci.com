@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Blog() {
+export default function Blog() {
   return (
     <main className="max-w-7xl mx-auto md:px-16 px-6">
       <section className="max-w-[950px] mb-12 pb-12 border-b dark:border-zinc-800 border-zinc-100">
@@ -29,10 +29,8 @@ export default async function Blog() {
             <p className="text-base dark:text-zinc-400 text-zinc-600 leading-relaxed mb-8">
               Welcome to my blog domain where I share personal stories about
               things I&apos;ve learned, projects I&apos;m hacking on and just
-              general findings. I also write for other publications.
+              general findings.
             </p>
-
-            <Social type="publication" />
           </Slide>
         </div>
       </section>
