@@ -15,7 +15,7 @@ export default function EmptyState({ value, icon }: stateType) {
             width={80}
             height={80}
             src={notFound}
-            alt="Not found robot"
+            alt="Not Found"
           />
         )}
       </div>
