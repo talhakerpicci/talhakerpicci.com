@@ -1,23 +1,19 @@
 import { JobType, ProfileType, ProjectType, SkillProps } from "@/types";
 import {
-    BiLinkExternal,
-    BiLogoGithub,
-    BiLogoInstagram,
-    BiLogoLinkedinSquare,
-    BiLogoSteam,
-    BiLogoTwitter,
-    BiLogoYoutube,
-    BiLogoMedium,
     BiLogoFlutter,
     BiLogoPython,
-    BiLogoCPlusPlus,
     BiLogoGoLang,
     BiLogoFirebase,
     BiLogoPostgresql,
-    BiLogoLinkedin,
     BiLogoGit,
     BiLogoVisualStudio,
-    BiLogoFirefox
+    BiLogoFirefox,
+    BiLogoGithub,
+    BiLogoInstagram,
+    BiLogoLinkedinSquare,
+    BiLogoTwitter,
+    BiLogoYoutube,
+    BiLogoMedium
 } from "react-icons/bi";
 
 import ArchLinuxIcon from '../components/shared/ArchLinuxIcon';
@@ -79,12 +75,27 @@ export const projects: ProjectType[] = [
         slug: "awesome-app",
         tagline: "An app that does awesome things.",
         projectUrl: "https://awesomeapp.com",
-        logo: "https://example.com/awesomeapp-logo.jpg",
+        logo: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/borda.png",
         coverImage: {
-            image: "https://example.com/awesomeapp-cover.jpg",
+            image: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/1.png",
             alt: "Awesome App in action",
         },
         description: "",
+        googlePlayImage: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/store/google-play.png",
+        appStoreImage: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/store/app-store.png",
+        webAppImage: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/store/pwa.png",
+        githubImage: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/store/github.png",
+        screenshots: [
+            "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/1.png",
+            "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/projects.png",
+            "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/1.png",
+            "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/projects.png",
+            "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/1.png",
+            "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/projects.png",
+            "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/1.png",
+            "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/projects.png",
+            "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/1.png",
+        ],
     }
 ];
 
@@ -99,4 +110,43 @@ export const skills: SkillProps[] = [
     { name: 'Git', icon: BiLogoGit, color: '#F03C2E' },
     { name: 'VsCode', icon: BiLogoVisualStudio, color: '#3C99D4' },
     { name: 'Firefox', icon: BiLogoFirefox, color: '#DF731B' },
+];
+
+export const socialLinks = [
+    {
+        id: 1,
+        name: "GitHub",
+        url: "https://github.com/talhakerpicci",
+        icon: BiLogoGithub,
+    },
+    {
+        id: 2,
+        name: "Twitter",
+        url: "https://twitter.com/talhakerpicci",
+        icon: BiLogoTwitter,
+    },
+    {
+        id: 3,
+        name: "Linkedin",
+        url: "https://linkedin.com/in/talha-kerpicci",
+        icon: BiLogoLinkedinSquare,
+    },
+    {
+        id: 4,
+        name: "Instagram",
+        url: "https://instagram.com/talhakerpicci",
+        icon: BiLogoInstagram,
+    },
+    {
+        id: 5,
+        name: "Youtube",
+        url: "https://youtube.com/@talhakerpicci",
+        icon: BiLogoYoutube,
+    },
+    {
+        id: 6,
+        name: "Medium",
+        url: "https://medium.com/@talha.kerpicci",
+        icon: BiLogoMedium,
+    },
 ];
