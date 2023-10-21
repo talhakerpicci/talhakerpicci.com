@@ -1,4 +1,4 @@
-import { JobType, ProfileType, ProjectType, SkillProps } from "@/types";
+import { JobType, PostType, ProfileType, ProjectType, SkillProps } from "@/types";
 import {
     BiLogoFlutter,
     BiLogoPython,
@@ -30,17 +30,6 @@ export const userProfile: ProfileType = {
     },
     shortBio: "I'm Talha Kerpicci, passionately exploring mobile app development with Flutter at Borda Technology. Currently broadening my expertise with Go and developing an exciting app, called Movie Paradise.",
     email: "talha.kerpicci@gmail.com",
-    fullBio: `
-    Hey there! My name is Talha Kerpicci. I'm currently working at Borda Technology as a Flutter Developer.
-    <br><br>
-    I started my programming career with C# and gained experience in development of various desktop applications. In addition to that I had some experience in Unity Game Engine.
-    <br><br>
-    Apart from these, I started learning Python and dived into web scraping. I created some tools for myself which I have been still using in my daily life.
-    <br><br>
-    Moreover, I have been learning Flutter to develop mobile applications for the last few months. I'm currently working on Simple Library.
-    <br><br>
-    I also have a huge interest on Linux and open source community. I am very enthusiastic to learn novelties in programming and Linux!
-    `,
     location: "Istanbul, Turkey",
     resumeURL: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/Talha-Kerpicci-CV.pdf",
 };
@@ -76,15 +65,11 @@ export const projects: ProjectType[] = [
         tagline: "An app that does awesome things.",
         projectUrl: "https://awesomeapp.com",
         logo: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/borda.png",
-        coverImage: {
-            image: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/1.png",
-            alt: "Awesome App in action",
-        },
         description: "",
-        googlePlayImage: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/store/google-play.png",
-        appStoreImage: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/store/app-store.png",
-        webAppImage: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/store/pwa.png",
-        githubImage: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/store/github.png",
+        googlePlayImage: true,
+        appStoreImage: true,
+        webAppImage: true,
+        githubImage: true,
         screenshots: [
             "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/1.png",
             "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/projects.png",
@@ -97,6 +82,23 @@ export const projects: ProjectType[] = [
             "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/1.png",
         ],
     }
+];
+
+export const posts: PostType[] = [];
+
+export const images = [
+    {
+        id: "1",
+        src: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/borda.png",
+    },
+    {
+        id: "2",
+        src: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/borda.png",
+    },
+    {
+        id: "3",
+        src: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/borda.png",
+    },
 ];
 
 export const skills: SkillProps[] = [
