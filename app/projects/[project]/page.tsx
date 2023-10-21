@@ -7,7 +7,9 @@ import { CustomPortableText } from "@/app/components/shared/CustomPortableText";
 import { Slide } from "../../animation/Slide";
 import { projects } from "../../data/data";
 import { useState } from 'react';
-import { BiExpand, BiWindowClose, BiRightArrowAlt, BiLeftArrowAlt } from "react-icons/bi";
+import { useEffect } from 'react';
+import { BiExpand, BiRightArrowAlt, BiLeftArrowAlt } from "react-icons/bi";
+import CloseIcon from "@/app/components/shared/CloseIcon";
 
 type Props = {
   params: {
@@ -47,23 +49,54 @@ export default function Project({ params }: Props) {
 
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [opacity, setOpacity] = useState(1);
+
 
   function openLightbox(index: number) {
     setCurrentImageIndex(index);
     setLightboxOpen(true);
+    document.body.style.overflow = 'hidden';
   }
 
   function closeLightbox() {
     setLightboxOpen(false);
+    document.body.style.overflow = '';
+  }
+
+  function changeImage(direction: 'next' | 'prev') {
+    setOpacity(0);
+    setTimeout(() => {
+      if (direction === 'next') {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % project.screenshots.length);
+      } else {
+        setCurrentImageIndex((prevIndex) => (prevIndex - 1 + project.screenshots.length) % project.screenshots.length);
+      }
+      setOpacity(1);
+    }, 300);
   }
 
   function nextImage() {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % project.screenshots.length);
+    changeImage('next');
   }
 
   function prevImage() {
-    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + project.screenshots.length) % project.screenshots.length);
+    changeImage('prev');
   }
+
+
+  useEffect(() => {
+    const handleKeydown = (e: any) => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeydown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeydown);
+    };
+  }, []);
 
   return (
     <main className="max-w-7xl mx-auto lg:px-20 px-10">
@@ -125,11 +158,33 @@ export default function Project({ params }: Props) {
           </div>
 
           {lightboxOpen && (
-            <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-              <span className="absolute left-4 cursor-pointer" onClick={prevImage}>←</span>
-              <Image src={project.screenshots[currentImageIndex]} alt="App Screenshot" width={400} height={710} className="rounded-xl" />
-              <span className="absolute right-4 cursor-pointer" onClick={nextImage}>→</span>
-              <span className="absolute top-4 right-4 cursor-pointer" onClick={closeLightbox}>X</span>
+            <div
+              className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+              onClick={closeLightbox}
+            >
+              <div className="absolute left-4 top-4 text-white text-xl">
+                {currentImageIndex + 1}/{project.screenshots.length}
+              </div>
+
+              <div className="absolute left-4 top-1/2 transform -translate-y-1/2" onClick={(e) => e.stopPropagation()}>
+                <BiLeftArrowAlt size={50} onClick={prevImage} className="text-white text-3xl cursor-pointer" />
+              </div>
+
+              <Image
+                style={{ opacity: opacity }}
+                src={project.screenshots[currentImageIndex]}
+                alt="App Screenshot"
+                width={400}
+                height={710}
+                className="rounded-xl transition-opacity duration-300"
+                onClick={(e) => e.stopPropagation()}
+              />
+
+
+              <div className="absolute right-4 top-1/2 transform -translate-y-1/2" onClick={(e) => e.stopPropagation()}>
+                <BiRightArrowAlt size={50} onClick={nextImage} className="text-white text-3xl cursor-pointer" />
+              </div>
+              <CloseIcon size={40} onClick={closeLightbox} className="absolute top-4 right-4 text-white text-3xl cursor-pointer" />
             </div>
           )}
 
