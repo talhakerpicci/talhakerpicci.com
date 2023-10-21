@@ -1,10 +1,9 @@
-import { socialLinks } from "../../data/social";
+import { socialLinks } from "../../data/data";
 
 export default function Social({ type }: { type: string }) {
   return (
     <ul className="flex items-center flex-wrap gap-x-5 gap-y-4 my-10">
       {socialLinks
-        .filter((item) => item.status === type)
         .map((value) => (
           <li key={value.id}>
             <a
