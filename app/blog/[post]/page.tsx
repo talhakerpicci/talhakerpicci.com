@@ -24,8 +24,8 @@ const fallbackImage: string =
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.post;
   const post: PostType = {
-    _id: "po1",
-    _createdAt: "2022-01-01T00:00:00Z",
+    id: "po1",
+    createdAt: "2022-01-01T00:00:00Z",
     title: "My Journey in Tech",
     slug: "my-journey-in-tech",
     description: "A summary of my journey in the tech industry.",
@@ -72,8 +72,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "talhakerpicci.com",
       authors: post.author.name,
       tags: post.tags,
-      publishedTime: post._createdAt,
-      modifiedTime: post._updatedAt || "",
+      publishedTime: post.createdAt,
+      modifiedTime: post.updatedAt || "",
     },
     twitter: {
       title: post.title,
@@ -90,8 +90,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Post({ params }: Props) {
   const slug = params.post;
   const post: PostType = {
-    _id: "po1",
-    _createdAt: "2022-01-01T00:00:00Z",
+    id: "po1",
+    createdAt: "2022-01-01T00:00:00Z",
     title: "My Journey in Tech",
     slug: "my-journey-in-tech",
     description: "A summary of my journey in the tech industry.",
@@ -138,10 +138,10 @@ export default async function Post({ params }: Props) {
             <div className="flex items-center gap-x-4 text-md mb-8 dark:text-zinc-400 text-zinc-600">
               <div className="flex items-center gap-x-2">
                 <BiCalendar />
-                <time dateTime={post.date ? post.date : post._createdAt}>
+                <time dateTime={post.date ? post.date : post.createdAt}>
                   {post.date
                     ? formatDate(post.date)
-                    : formatDate(post._createdAt)}
+                    : formatDate(post.createdAt)}
                 </time>
               </div>
               {/* <div className="flex items-center gap-x-2">
