@@ -113,22 +113,22 @@ export default function Project({ params }: Props) {
               <div className="flex flex-wrap justify-center lg:justify-start mt-12">
                 {project.googlePlayImage &&
                   <div className="w-36 flex justify-center mt-2">
-                    <Image src={project.googlePlayImage} alt="Google Play" width={0} height={0} sizes="100vw" className="badge-size" style={{ width: 'auto', height: 'auto' }} />
+                    <Image src={"https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/store/google-play.png"} alt="Google Play" width={0} height={0} sizes="100vw" className="badge-size" style={{ width: 'auto', height: 'auto' }} />
                   </div>
                 }
                 {project.appStoreImage &&
                   <div className="w-36 flex justify-center mt-2">
-                    <Image src={project.appStoreImage} alt="App Store" width={0} height={0} sizes="100vw" className="badge-size" style={{ width: 'auto', height: 'auto' }} />
+                    <Image src={"https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/store/app-store.png"} alt="App Store" width={0} height={0} sizes="100vw" className="badge-size" style={{ width: 'auto', height: 'auto' }} />
                   </div>
                 }
                 {project.webAppImage &&
                   <div className="w-36 flex justify-center mt-2">
-                    <Image src={project.webAppImage} alt="Web App" width={0} height={0} sizes="100vw" className="badge-size" style={{ width: 'auto', height: 'auto' }} />
+                    <Image src={"https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/store/pwa.png"} alt="Web App" width={0} height={0} sizes="100vw" className="badge-size" style={{ width: 'auto', height: 'auto' }} />
                   </div>
                 }
                 {project.githubImage &&
                   <div className="w-36 flex justify-center mt-2">
-                    <Image src={project.githubImage} alt="Github" width={0} height={0} sizes="100vw" className="badge-size" style={{ width: 'auto', height: 'auto' }} />
+                    <Image src={"https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/store/github.png"} alt="Github" width={0} height={0} sizes="100vw" className="badge-size" style={{ width: 'auto', height: 'auto' }} />
                   </div>
                 }
               </div>
