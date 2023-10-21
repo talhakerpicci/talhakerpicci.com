@@ -8,7 +8,6 @@ export type ProfileType = {
   };
   shortBio: string;
   email: string;
-  fullBio: string;
   location: string;
   resumeURL: string;
 };
@@ -31,17 +30,18 @@ export type ProjectType = {
   tagline: string;
   projectUrl: string;
   logo: string;
-  coverImage: {
-    image: string;
-    alt: string | null;
-  };
   description: string;
+  googlePlayImage: boolean;
+  appStoreImage: boolean;
+  webAppImage: boolean;
+  githubImage: boolean;
+  screenshots: string[];
 };
 
 export type PostType = {
-  _id: string;
-  _createdAt: string;
-  _updatedAt?: string;
+  id: string;
+  createdAt: string;
+  updatedAt?: string;
   title: string;
   slug: string;
   description: string;
@@ -63,14 +63,6 @@ export type PostType = {
   body: string;
   featured: boolean;
   isPublished: boolean;
-};
-
-export type HeroeType = {
-  _id: string;
-  _createdAt: string;
-  name: string;
-  url: string;
-  met: boolean;
 };
 
 export type SkillProps = {
