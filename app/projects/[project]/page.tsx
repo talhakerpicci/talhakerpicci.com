@@ -1,11 +1,13 @@
+'use client';
+
 import Image from "next/image";
 import { Metadata } from "next";
-import type { ProjectType } from "@/types";
 import { PortableText } from "@portabletext/react";
 import { CustomPortableText } from "@/app/components/shared/CustomPortableText";
 import { Slide } from "../../animation/Slide";
 import { projects } from "../../data/data";
-
+import { useState } from 'react';
+import { BiExpand, BiWindowClose, BiRightArrowAlt, BiLeftArrowAlt } from "react-icons/bi";
 
 type Props = {
   params: {
@@ -17,9 +19,12 @@ const fallbackImage: string =
   "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/projects.png";
 
 // Dynamic metadata for SEO
-export function generateMetadata({ params }: Props): Metadata {
+/* export function generateMetadata({ params }: Props): Metadata {
   const slug = params.project;
   const project = projects[0];
+
+  console.log("Here");
+  console.log(slug);
 
   return {
     title: `${project.name} | Project`,
@@ -34,44 +39,101 @@ export function generateMetadata({ params }: Props): Metadata {
     },
   };
 }
+ */
 
 export default function Project({ params }: Props) {
   const slug = params.project;
   const project = projects[0];
 
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  function openLightbox(index: number) {
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+  }
+
+  function closeLightbox() {
+    setLightboxOpen(false);
+  }
+
+  function nextImage() {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % project.screenshots.length);
+  }
+
+  function prevImage() {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + project.screenshots.length) % project.screenshots.length);
+  }
+
   return (
-    <main className="max-w-6xl mx-auto lg:px-16 px-8">
+    <main className="max-w-7xl mx-auto lg:px-20 px-10">
       <Slide>
-        <div className="max-w-3xl mx-auto">
-          <div className="flex items-start justify-between mb-4">
-            <h1 className="font-incognito font-black tracking-tight sm:text-5xl text-3xl mb-4 max-w-sm">
-              {project.name}
-            </h1>
+        <div className="max-w-4xl ml-4 lg:ml-20 py-10">
+          <div className="flex flex-col lg:flex-row items-center mb-6 space-y-4 lg:space-y-0 lg:space-x-8">
+            <div className="bg-purple-500 rounded-3xl w-40 h-40 lg:w-auto lg:h-auto">
+              <Image src="/path/to/M-logo.png" alt="App Logo" width={222} height={222} className="lg:w-222 lg:h-222 rounded-3xl" />
+            </div>
 
-            <a
-              href={project.projectUrl}
-              rel="noreferrer noopener"
-              target="_blank"
-              className={`dark:bg-primary-bg bg-secondary-bg dark:text-white text-zinc-700 border border-transparent rounded-md px-4 py-2 ${!project.projectUrl
-                ? "cursor-not-allowed opacity-80"
-                : "cursor-pointer hover:border-zinc-700"
-                }`}
-            >
-              {project.projectUrl ? "Explore" : "Coming Soon"}
-            </a>
+            <div className="text-center lg:text-left">
+              <h1 className="font-incognito font-black text-5xl">{project.name}</h1>
+              <p className="text-lg mt-8">{project.tagline || 'A super tagline for the mobile app'}</p>
+              <div className="flex flex-wrap justify-center lg:justify-start mt-12">
+                {project.googlePlayImage &&
+                  <div className="w-36 flex justify-center mt-2">
+                    <Image src={project.googlePlayImage} alt="Google Play" width={0} height={0} sizes="100vw" className="badge-size" style={{ width: 'auto', height: 'auto' }} />
+                  </div>
+                }
+                {project.appStoreImage &&
+                  <div className="w-36 flex justify-center mt-2">
+                    <Image src={project.appStoreImage} alt="App Store" width={0} height={0} sizes="100vw" className="badge-size" style={{ width: 'auto', height: 'auto' }} />
+                  </div>
+                }
+                {project.webAppImage &&
+                  <div className="w-36 flex justify-center mt-2">
+                    <Image src={project.webAppImage} alt="Web App" width={0} height={0} sizes="100vw" className="badge-size" style={{ width: 'auto', height: 'auto' }} />
+                  </div>
+                }
+                {project.githubImage &&
+                  <div className="w-36 flex justify-center mt-2">
+                    <Image src={project.githubImage} alt="Github" width={0} height={0} sizes="100vw" className="badge-size" style={{ width: 'auto', height: 'auto' }} />
+                  </div>
+                }
+              </div>
+
+            </div>
           </div>
 
-          <div className="relative w-full h-40 pt-[52.5%]">
-            <Image
-              className="rounded-xl border dark:border-zinc-800 border-zinc-100 object-cover"
-              layout="fill"
-              src={project.coverImage?.image || fallbackImage}
-              alt={project.coverImage?.alt || project.name}
-              quality={100}
-            />
+          <h2 className="font-black text-2xl mt-32 mb-6 ">Screenshots</h2>
+          <div className="flex space-x-6 overflow-x-auto py-4 scrollbar-hide">
+            {project.screenshots && project.screenshots.map((screenshot, index) => (
+              <div key={index} className="relative flex-shrink-0" style={{ width: '200px' }}>
+                <Image
+                  onClick={() => openLightbox(index)}
+                  src={screenshot || fallbackImage}
+                  alt="App Screenshot"
+                  width={200}
+                  height={355}
+                  className="rounded-xl self-stretch"
+                />
+                <BiExpand
+                  className="text-white absolute top-2 right-2 z-10 cursor-pointer"
+                  size={32}
+                  onClick={() => openLightbox(index)}
+                />
+              </div>
+            ))}
           </div>
 
-          <div className="mt-8 dark:text-zinc-400 text-zinc-600 leading-relaxed">
+          {lightboxOpen && (
+            <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+              <span className="absolute left-4 cursor-pointer" onClick={prevImage}>←</span>
+              <Image src={project.screenshots[currentImageIndex]} alt="App Screenshot" width={400} height={710} className="rounded-xl" />
+              <span className="absolute right-4 cursor-pointer" onClick={nextImage}>→</span>
+              <span className="absolute top-4 right-4 cursor-pointer" onClick={closeLightbox}>X</span>
+            </div>
+          )}
+
+          <div className="mt-10 dark:text-zinc-400 text-zinc-600 leading-relaxed">
             <PortableText
               value={project.description as any}
               components={CustomPortableText}
