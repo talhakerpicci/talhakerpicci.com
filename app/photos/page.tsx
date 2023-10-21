@@ -1,21 +1,7 @@
 import { Slide } from "../animation/Slide";
 import Image from "next/image";
 import { Metadata } from "next";
-
-const images = [
-    {
-        id: "1",
-        src: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/borda.png",
-    },
-    {
-        id: "2",
-        src: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/borda.png",
-    },
-    {
-        id: "3",
-        src: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/borda.png",
-    },
-];
+import { images } from "../data/data";
 
 export const metadata: Metadata = {
     title: "Photos | Talha Kerpicci",
