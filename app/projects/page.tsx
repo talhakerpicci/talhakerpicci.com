@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import type { ProjectType } from "@/types";
 import EmptyState from "../components/shared/EmptyState";
 import { Slide } from "../animation/Slide";
+import { projects } from "../data/data";
 
 export const metadata: Metadata = {
   title: "Projects | Talha Kerpicci",
@@ -18,24 +18,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Project() {
-  const projects: ProjectType[] = [
-    {
-      _id: "pr1",
-      name: "Awesome App",
-      slug: "awesome-app",
-      tagline: "An app that does awesome things.",
-      projectUrl: "https://awesomeapp.com",
-      logo: "https://example.com/awesomeapp-logo.jpg",
-      coverImage: {
-        image: "https://example.com/awesomeapp-cover.jpg",
-        alt: "Awesome App in action",
-      },
-      description: "",
-    }
-  ];
-
-
+export default function Project() {
   return (
     <main className="max-w-7xl mx-auto md:px-16 px-6">
       <header className="max-w-2xl mb-16">
