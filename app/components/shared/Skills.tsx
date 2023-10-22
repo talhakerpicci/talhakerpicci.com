@@ -11,7 +11,7 @@ export default function SkillsList() {
     return (
         <section className="mt-32">
             <Slide delay={0.16}>
-                <h2 className="font-incognito text-4xl mb-4 font-bold tracking-tight">
+                <h2 className="font-incognito text-4xl mb-12 font-bold tracking-tight">
                     Skills and Tools
                 </h2>
             </Slide>
@@ -27,8 +27,8 @@ export default function SkillsList() {
                                 className="flex items-center space-x-2 p-2 border rounded-3xl group transition-transform transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-[rgba(var(--skill-color))] hover:border-[rgba(var(--border-color))]"
                                 style={{ '--skill-color': rgbaColor, '--border-color': borderColor } as CSSPropertiesWithCustomVars}
                             >
-                                <Icon className="w-6 h-6 text-white" aria-hidden="true" />
-                                <span className="text-white">{skill.name}</span>
+                                <Icon className="w-6 h-6" style={{ color: 'var(--lang-color)' }} aria-hidden="true" />
+                                <span style={{ color: 'var(--lang-color)' }}>{skill.name}</span>
                             </div>
                         );
                     })}
