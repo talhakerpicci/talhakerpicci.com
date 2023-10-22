@@ -1,6 +1,7 @@
 import { Slide } from '@/app/animation/Slide';
-import { skills } from '../../data/data';
 import { hexToRgb } from '@/app/utils/hexToRgb';
+import { skills } from '../../data/data';
+
 
 type CSSPropertiesWithCustomVars = React.CSSProperties & {
     '--skill-color'?: string;
