@@ -1,5 +1,5 @@
 export type ProfileType = {
-  _id: string;
+  id: string;
   fullName: string;
   headline: string;
   profileImage: {
@@ -13,7 +13,7 @@ export type ProfileType = {
 };
 
 export type JobType = {
-  _id: string;
+  id: string;
   name: string;
   jobTitle: string;
   logo: string;
@@ -24,7 +24,7 @@ export type JobType = {
 };
 
 export type ProjectType = {
-  _id: string;
+  id: string;
   name: string;
   slug: string;
   tagline: string;

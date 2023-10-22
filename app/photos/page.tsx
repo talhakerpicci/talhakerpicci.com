@@ -6,12 +6,12 @@ import { images } from "../data/data";
 export const metadata: Metadata = {
     title: "Photos | Talha Kerpicci",
     metadataBase: new URL("https://talhakerpicci.com/photos"),
-    description: "Explore photos and images by Victor Eke",
+    description: "Explore photos and images by Talha Kerpicci",
     openGraph: {
         title: "Photos | Talha Kerpicci",
         url: "https://talhakerpicci.com/photos",
-        description: "Explore photos and images by Victor Eke",
-        images: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/borda.png",
+        description: "Explore photos and images by Talha Kerpicci",
+        images: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/photos.png",
     },
 };
 
