@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import type { PostType } from "@/types";
 import { PortableText } from "@portabletext/react";
 import { posts } from "@/app/data/data";
 import { BiChevronRight, BiCalendar } from "react-icons/bi";
@@ -11,7 +10,6 @@ import { formatDate } from "../../utils/date";
 import SharePost from "../../components/shared/SharePost";
 import FeaturedPosts from "../../components/pages/FeaturedPosts";
 import { Slide } from "../../animation/Slide";
-
 
 type Props = {
   params: {
@@ -68,30 +66,8 @@ export function generateMetadata({ params }: Props): Metadata {
 
 export default function Post({ params }: Props) {
   const slug = params.post;
-  const post: PostType = {
-    id: "po1",
-    createdAt: "2022-01-01T00:00:00Z",
-    title: "My Journey in Tech",
-    slug: "my-journey-in-tech",
-    description: "A summary of my journey in the tech industry.",
-    date: "2022-01-01",
-    coverImage: {
-      image: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/jobs/borda.png",
-      alt: "A scenic road representing a journey"
-    },
-    tags: ["tech", "journey", "career"],
-    author: {
-      name: "John Doe",
-      photo: {
-        image: "https://example.com/john-photo.jpg",
-        alt: "Portrait of John Doe"
-      },
-      twitterUrl: "https://twitter.com/johndoe"
-    },
-    body: "",
-    featured: true,
-    isPublished: true
-  };
+  const post = posts.find(post => post.slug === slug);
+
   if (!post) {
     notFound();
   }
