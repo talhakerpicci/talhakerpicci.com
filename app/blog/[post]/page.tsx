@@ -4,12 +4,14 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { PostType } from "@/types";
 import { PortableText } from "@portabletext/react";
+import { posts } from "@/app/data/data";
+import { BiChevronRight, BiCalendar } from "react-icons/bi";
 import { CustomPortableText } from "../../components/shared/CustomPortableText";
-import { BiChevronRight, BiCalendar, BiTime } from "react-icons/bi";
 import { formatDate } from "../../utils/date";
 import SharePost from "../../components/shared/SharePost";
 import FeaturedPosts from "../../components/pages/FeaturedPosts";
 import { Slide } from "../../animation/Slide";
+
 
 type Props = {
   params: {
@@ -21,32 +23,9 @@ const fallbackImage: string =
   "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/blog.png";
 
 // Dynamic metadata for SEO
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export function generateMetadata({ params }: Props): Metadata {
   const slug = params.post;
-  const post: PostType = {
-    id: "po1",
-    createdAt: "2022-01-01T00:00:00Z",
-    title: "My Journey in Tech",
-    slug: "my-journey-in-tech",
-    description: "A summary of my journey in the tech industry.",
-    date: "2022-01-01",
-    coverImage: {
-      image: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/borda.png",
-      alt: "A scenic road representing a journey"
-    },
-    tags: ["tech", "journey", "career"],
-    author: {
-      name: "John Doe",
-      photo: {
-        image: "https://example.com/john-photo.jpg",
-        alt: "Portrait of John Doe"
-      },
-      twitterUrl: "https://twitter.com/johndoe"
-    },
-    body: "",
-    featured: true,
-    isPublished: true
-  };
+  const post = posts.find(post => post.slug === slug);
 
   if (!post) {
     notFound();
@@ -87,7 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Post({ params }: Props) {
+export default function Post({ params }: Props) {
   const slug = params.post;
   const post: PostType = {
     id: "po1",
@@ -97,7 +76,7 @@ export default async function Post({ params }: Props) {
     description: "A summary of my journey in the tech industry.",
     date: "2022-01-01",
     coverImage: {
-      image: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/borda.png",
+      image: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/jobs/borda.png",
       alt: "A scenic road representing a journey"
     },
     tags: ["tech", "journey", "career"],
@@ -144,10 +123,6 @@ export default async function Post({ params }: Props) {
                     : formatDate(post.createdAt)}
                 </time>
               </div>
-              {/* <div className="flex items-center gap-x-2">
-                <BiTime />
-                <div className="">5 min</div>
-              </div> */}
             </div>
             <h1 className="font-incognito font-semibold tracking-tight sm:text-[2.5rem] lg:leading-none leading-tight text-3xl mb-4">
               {post.title}
