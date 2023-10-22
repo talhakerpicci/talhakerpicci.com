@@ -1,10 +1,9 @@
 import Image from "next/image";
-import type { JobType } from "@/types";
+import { jobs } from "@/app/data/data";
 import { formatDate } from "../../utils/date";
 import { Slide } from "../../animation/Slide";
-import { jobs } from "@/app/data/data";
 
-export default async function Job() {
+export default function Job() {
   return (
     <section className="mt-32">
       <Slide delay={0.16}>
@@ -19,7 +18,7 @@ export default async function Job() {
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-12 gap-y-10">
           {jobs.map((data) => (
             <div
-              key={data._id}
+              key={data.id}
               className="flex items-start lg:gap-x-6 gap-x-4 max-w-2xl relative before:absolute before:bottom-0 before:top-[5rem] before:left-9 before:w-[1px] before:h-[calc(100%-70px)] dark:before:bg-zinc-800 before:bg-zinc-200"
             >
               <a
