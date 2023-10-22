@@ -6,14 +6,12 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import {
   HiBeaker,
   HiBookmarkAlt,
-  HiCamera,
   HiHome,
   HiOutlineX,
   HiPhotograph,
   HiUser,
 } from "react-icons/hi";
 import Logo from "../../../public/logo.png";
-import { Slide } from "../../animation/Slide";
 
 export default function MobileMenu() {
   const [navShow, setNavShow] = useState(false);
