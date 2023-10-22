@@ -4,7 +4,6 @@ import { BiEnvelope, BiLinkExternal, BiSolidDownload } from "react-icons/bi";
 import { Slide } from "../animation/Slide";
 import { userProfile } from "../data/data";
 
-
 export const metadata: Metadata = {
   title: "About | Talha Kerpicci",
   metadataBase: new URL("https://talhakerpicci.com/about"),
