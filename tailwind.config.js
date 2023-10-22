@@ -33,6 +33,9 @@ module.exports = {
       backgroundPosition: {
         zero: "0 0",
       },
+      width: {
+        '42': '10.4rem',
+      },
     },
   },
   plugins: [],
