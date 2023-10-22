@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { BiDetail } from "react-icons/bi";
 import Posts from "../components/pages/Posts";
-import Social from "../components/shared/Social";
 import { Slide } from "../animation/Slide";
 
 export const metadata: Metadata = {
@@ -12,8 +11,7 @@ export const metadata: Metadata = {
     title: "Blog | Talha Kerpicci",
     url: "https://talhakerpicci.com/blog",
     description: "Read latest stories from Talha Kerpicci's Blog",
-    images:
-      "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/blog.png",
+    images: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/blog.png",
   },
 };
 
