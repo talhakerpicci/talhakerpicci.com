@@ -28,7 +28,7 @@ module.exports = {
       },
       backgroundImage: {
         noise:
-          "url('https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/noise.png')",
+          "url('https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/noise.png')",
       },
       backgroundPosition: {
         zero: "0 0",
