@@ -1,9 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
-import type { ProfileType } from "@/types";
-import { PortableText } from "@portabletext/react";
 import { BiEnvelope, BiLinkExternal, BiSolidDownload } from "react-icons/bi";
-import { CustomPortableText } from "../components/shared/CustomPortableText";
 import { Slide } from "../animation/Slide";
 import { userProfile } from "../data/data";
 
@@ -11,22 +8,19 @@ import { userProfile } from "../data/data";
 export const metadata: Metadata = {
   title: "About | Talha Kerpicci",
   metadataBase: new URL("https://talhakerpicci.com/about"),
-  description:
-    "Learn more about my skills, experience and technical background",
+  description: "Learn more about my skills, experience and technical background",
   openGraph: {
     title: "About | Talha Kerpicci",
     url: "https://talhakerpicci.com/about",
-    description:
-      "Learn more about my skills, experience and technical background",
-    images:
-      "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/home.png",
+    description: "Learn more about my skills, experience and technical background",
+    images: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/home.png",
   },
 };
 
-export default async function About() {
+export default function About() {
   return (
     <main className="relative lg:max-w-7xl mx-auto max-w-3xl md:px-16 px-6">
-      <div key={userProfile._id}>
+      <div key={userProfile.id}>
         <section className="relative grid lg:grid-cols-custom grid-cols-1 gap-x-6 justify-items-center">
           <div className="order-2 lg:order-none">
             <Slide>
@@ -45,7 +39,7 @@ export default async function About() {
                 <a href="/projects/awesome-app" className="transition-colors duration-300">Simple Library</a>.
                 <br /><br />
                 Now, I'm delving into Go, aiming to work on the backend side of things. My current project is an app named&nbsp;
-                <a href="https://movieparadise.app/" className="transition-colors duration-300">Movie Paradise</a>.
+                <a href="https://movieparadise.app/" target="_blank" className="transition-colors duration-300">Movie Paradise</a>.
                 <br /><br />
                 Outside of coding, I'm passionate about Linux and the open-source community. I'm always keen to learn and grow in both programming and Linux. Oh, and I use Arch btw =)
                 <br /><br />
