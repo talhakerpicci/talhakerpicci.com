@@ -20,7 +20,6 @@ type Props = {
 const fallbackImage: string =
   "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/blog.png";
 
-// Dynamic metadata for SEO
 export function generateMetadata({ params }: Props): Metadata {
   const slug = params.post;
   const post = posts.find(post => post.slug === slug);
