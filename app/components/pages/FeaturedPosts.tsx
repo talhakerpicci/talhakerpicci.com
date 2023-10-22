@@ -1,41 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import type { PostType } from "@/types";
+import { posts } from "@/app/data/data";
 
-export default async function FeaturedPosts({ params }: { params?: string }) {
-  const featuredPosts: PostType[] = [
-    {
-      _id: "po1",
-      _createdAt: "2022-01-01T00:00:00Z",
-      title: "My Journey in Tech",
-      slug: "my-journey-in-tech",
-      description: "A summary of my journey in the tech industry.",
-      date: "2022-01-01",
-      coverImage: {
-        image: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/borda.png",
-        alt: "A scenic road representing a journey"
-      },
-      tags: ["tech", "journey", "career"],
-      author: {
-        name: "John Doe",
-        photo: {
-          image: "https://example.com/john-photo.jpg",
-          alt: "Portrait of John Doe"
-        },
-        twitterUrl: "https://twitter.com/johndoe"
-      },
-      body: "",
-      featured: true,
-      isPublished: true
-    }
-  ];
-
+export default function FeaturedPosts({ params }: { params?: string }) {
   return (
     <>
-      {featuredPosts.map((post) =>
+      {posts.map((post) =>
         post.featured !== true || post.isPublished !== true ? null : (
           <article
-            key={post._id}
+            key={post.id}
             className={`mb-4 ${post.slug === params ? "hidden" : "flex lg:flex-row flex-col"
               }`}
           >
