@@ -12,7 +12,6 @@
 - [NextJS][nextjs] - UI framework
 - [Vercel][vercel] - Hosting and Deployment
 - [TailwindCSS][tailwind] / CSS - Styling and UI
-- [PlanetScale][planetscale]: Database Storage for Analytics
 - [Next Themes][nexttheme]: Color Theme
 - [React Refractor][reactrefractor]: Syntax Highlighting
 
