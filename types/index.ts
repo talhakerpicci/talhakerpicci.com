@@ -31,10 +31,10 @@ export type ProjectType = {
   projectUrl: string;
   logo: string;
   description: string;
-  googlePlayImage: boolean;
-  appStoreImage: boolean;
-  webAppImage: boolean;
-  githubImage: boolean;
+  googlePlay: string;
+  appStore: string;
+  webApp: string;
+  github: string;
   screenshots: string[];
 };
 
