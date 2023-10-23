@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { projects } from "../../data/data";
 import Project from "./project";
 
@@ -13,10 +14,14 @@ const fallbackImage: string =
 
 export function generateMetadata({ params }: Props): Metadata {
   const slug = params.project;
-  const project = projects[0];
+  const project = projects.find(project => project.slug === slug);
 
   console.log("Here");
   console.log(slug);
+
+  if (!project) {
+    notFound();
+  }
 
   return {
     title: `${project.name} | Project`,
