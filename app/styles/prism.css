@@ -219,3 +219,11 @@ pre[data-line] {
   max-width: 158px;
   max-height: 52px;
 }
+
+.project-description ul {
+  list-style-type: disc;
+}
+
+.project-description h1 {
+  font-size: 2em;
+}
