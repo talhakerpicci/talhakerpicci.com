@@ -35,10 +35,10 @@ export default function About() {
                 Later, my interest in Python guided me towards web scraping, and I built some useful tools that I use regularly. As I ventured further into the Python ecosystem, I adopted Flask to design backend solutions, providing a robust foundation for my applications.
                 <br /><br />
                 Wanting to dive into mobile app development, I learned Flutter and have since created a range of apps, including one I&apos;m particularly proud of,&nbsp;
-                <a href="/projects/awesome-app" className="transition-colors duration-300">Simple Library</a>.
+                <a href="/projects/awesome-app" className="dark:text-blue-400 text-blue-500">Simple Library</a>.
                 <br /><br />
                 Now, I&apos;m delving into Go, aiming to work on the backend side of things. My current project is an app named&nbsp;
-                <a href="https://movieparadise.app/" target="_blank" className="transition-colors duration-300">Movie Paradise</a>.
+                <a href="https://movieparadise.app/" target="_blank" className="dark:text-blue-400 text-blue-500">Movie Paradise</a>.
                 <br /><br />
                 Outside of coding, I&apos;m passionate about Linux and the open-source community. I&apos;m always keen to learn and grow in both programming and Linux. Oh, and I use Arch btw =)
                 <br /><br />
