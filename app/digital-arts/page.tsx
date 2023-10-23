@@ -15,6 +15,11 @@ export const metadata: Metadata = {
     },
 };
 
+export const imgs = Array.from({ length: images }, (_, index) => ({
+    id: index,
+    src: `/images/digital-arts/${index}.png`
+}));
+
 export default function DigitalArts() {
     return (
         <main className="max-w-7xl mx-auto md:px-16 px-6 lg:mt-32 mt-20">
@@ -24,21 +29,25 @@ export default function DigitalArts() {
                         Digital Arts
                     </h1>
                     <p className="text-base dark:text-zinc-400 text-zinc-600 leading-relaxed">
-                        Explore a collection of my digital creations, made with DALL·E.
+                        Explore a collection of {imgs.length} digital creations, made with DALL·E.
                     </p>
                 </Slide>
             </div>
             <figure className="my-6">
-                <Slide delay={0.12} className="flex flex-wrap gap-2">
-                    {images.map((image) => (
-                        <Image
+                <Slide delay={0.12} className="flex flex-wrap gap-8">
+                    {imgs.slice().reverse().map((image) => (
+                        <div
                             key={image.id}
-                            src={image.src}
-                            alt="playing guitar"
-                            width={350}
-                            height={800}
-                            className="dark:bg-primary-bg bg-secondary-bg"
-                        />
+                            className="image-container dark:bg-primary-bg bg-secondary-bg"
+                            style={{ width: '350px', height: '350px' }}
+                        >
+                            <Image
+                                src={image.src}
+                                alt="Digital Art"
+                                layout="fill"
+                                objectFit="cover"
+                            />
+                        </div>
                     ))}
                 </Slide>
             </figure>

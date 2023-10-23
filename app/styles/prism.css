@@ -227,3 +227,13 @@ pre[data-line] {
 .project-description h1 {
   font-size: 2em;
 }
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover {
+  transform: scale(1.1);
+}
