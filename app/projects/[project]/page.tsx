@@ -16,9 +16,6 @@ export function generateMetadata({ params }: Props): Metadata {
   const slug = params.project;
   const project = projects.find(project => project.slug === slug);
 
-  console.log("Here");
-  console.log(slug);
-
   if (!project) {
     notFound();
   }

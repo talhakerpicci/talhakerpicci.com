@@ -97,9 +97,9 @@ export default function DigitalArts() {
                             <Image
                                 src={image.src}
                                 alt="Digital Art"
-                                layout="fill"
-                                objectFit="cover"
                                 onClick={() => openLightbox(image.id)}
+                                fill
+                                style={{ objectFit: "cover" }}
                             />
                         </div>
                     ))}
