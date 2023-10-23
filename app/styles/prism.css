@@ -219,13 +219,3 @@ pre[data-line] {
   max-width: 158px;
   max-height: 52px;
 }
-
-div.text-zinc-600 a {
-  color: #06fafa;
-  transition: color 0.3s ease;
-}
-
-body.dark div.text-zinc-400 a {
-  color: #0a4e4e;
-  transition: color 0.3s ease;
-}
