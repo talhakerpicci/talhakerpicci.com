@@ -24,7 +24,7 @@ export const userProfile: ProfileType = {
     fullName: "Talha Kerpicci",
     headline: "Software Developer",
     profileImage: {
-        image: "/avatar.png",
+        image: "/images/illustrations/home.png",
         alt: "Talha Kerpicci Avatar"
     },
     shortBio: "I'm Talha Kerpicci, passionately exploring mobile app development with Flutter at Borda Technology. Currently broadening my expertise with Go and developing an exciting app, called Movie Paradise.",
@@ -61,14 +61,38 @@ export const projects: ProjectType[] = [
         id: "5",
         name: "Simple Library",
         slug: "simple-library",
-        tagline: "Mobile app for managing farm animals and tracking items in storage with ease.",
+        tagline: "A mobile app to organize, track, and enhance your reading experience.",
         projectUrl: "",
         logo: "/images/apps/simple-library/logo.png",
-        description: "",
-        googlePlayImage: true,
-        appStoreImage: false,
-        webAppImage: false,
-        githubImage: true,
+        description: `
+        <p>Simple Library is a personal digital library app that helps you to keep track of your books with attractive features and provides you to build a continuous reading habit.</p>
+        <br>
+        <p>Simple Library stores all your books in the cloud, therefore you never lose access to your books! In addition to that, your highlights, collections, goals, and customized genres are also securely preserved!</p>
+        <br>
+        <p>Simple Library offers many features, as follows:</p>
+        <br>
+        <ul>
+            <li><strong>High Customization Ability</strong>: Each book has many attributes, like author name, total pages, your current position, genre, date started, date finished, etc. Simple Library provides you the ability to customize your library the way you wish.</li>
+            <br>
+            <li><strong>Create Highlights For Each Book</strong>: Throw away your pens and papers, since Simple Library lets you create highlights for each book. Scanning the page with the scan feature is enough to extract the desired text section from the page!</li>
+            <br>
+            <li><strong>Set Goals</strong>: Simple Library lets you create daily, monthly, yearly goals, and helps you to build a continuous reading habit.</li>
+            <br>
+            <li><strong>View Your Reading Statistics</strong>: You can view stats that show general and detailed information about your books in your library and your reading habit.</li>
+            <br>
+            <li><strong>Create Collections</strong>: Simple Library offers you the ability to create and manage book collections.</li>
+            <br>
+            <li><strong>Reading Reminders</strong>: You can create specific reminders for each book.</li>
+            <br>
+            <li><strong>Graphs</strong>: View detailed graphs about your reading habits and your library.</li>
+            <br>
+            <li><strong>Filter and Detailed Search</strong>: Easily filter and search your books.</li>
+        </ul>
+        `,
+        googlePlay: "https://play.google.com/store/apps/details?id=com.talhakerpicci.simplelibrary",
+        appStore: "",
+        webApp: "",
+        github: "https://github.com/talhakerpicci/simple_library",
         screenshots: [
             "/images/apps/simple-library/1.jpg",
             "/images/apps/simple-library/2.jpg",
@@ -88,11 +112,29 @@ export const projects: ProjectType[] = [
         tagline: "Mobile app for managing farm animals and tracking items in storage with ease.",
         projectUrl: "",
         logo: "/images/apps/house-of-auctions/logo.png",
-        description: "",
-        googlePlayImage: false,
-        appStoreImage: false,
-        webAppImage: false,
-        githubImage: false,
+        description: `
+        <p>
+            <strong>House of Auctions</strong> is a mobile application I developed to bridge the gap between sellers and enthusiastic buyers in the auction world.
+        </p>
+        <br>
+        <p>
+            Key features and achievements of this project include:
+        </p>
+        <br>
+        <ul>
+            <li>Enabling users to <em>list items for auction</em> with comprehensive details, starting bid, and a set duration for the auction.</li>
+            <br>
+            <li>Facilitating real-time bidding, ensuring users can <em>engage in dynamic auctions</em> and place immediate bids.</li>
+            <br>
+            <li>Integrated chat functionality allowing buyers and sellers to communicate directly, ensuring transparency and clarity in transactions.</li>
+            <br>
+            <li>Designing a user-centric interface, accommodating both seasoned auction enthusiasts and first-time users.</li>
+        </ul>
+        `,
+        googlePlay: "",
+        appStore: "",
+        webApp: "",
+        github: "https://github.com/talhakerpicci/house-of-auctions-flutter",
         screenshots: [
             "/images/apps/house-of-auctions/1.png",
             "/images/apps/house-of-auctions/2.png",
@@ -119,11 +161,27 @@ export const projects: ProjectType[] = [
         tagline: "Mobile app for managing farm animals and tracking items in storage with ease.",
         projectUrl: "",
         logo: "/images/apps/brand-ambassador/logo.png",
-        description: "",
-        googlePlayImage: false,
-        appStoreImage: false,
-        webAppImage: false,
-        githubImage: false,
+        description: `
+        <p>
+            <strong>Brand Ambassador</strong> is a mobile application I architected to elevate a company's social media presence in an organic manner. This app serves as a bridge, connecting companies directly with their target demographic by showcasing the company's latest posts from platforms such as Twitter and LinkedIn right within the app.
+        </p>
+        <br>
+        <p>
+            Distinct features of the "Brand Ambassador" project are:
+        </p>
+        <br>
+        <ul>
+            <li>Efficient aggregation of a company's most recent social media posts from Twitter and LinkedIn, making them readily accessible in one place.</li>
+            <br>
+            <li>An immersive user interface that presents these posts in an intuitive manner, fostering higher levels of engagement.</li>
+            <br>
+            <li>A thoughtfully implemented reward system that incentivizes users for their interactions, be it liking, commenting, or retweeting the displayed posts.</li>
+        </ul>
+        `,
+        googlePlay: "",
+        appStore: "",
+        webApp: "",
+        github: "",
         screenshots: [
             "/images/apps/brand-ambassador/1.png",
             "/images/apps/brand-ambassador/2.png",
@@ -152,11 +210,27 @@ export const projects: ProjectType[] = [
         tagline: "Mobile app for managing farm animals and tracking items in storage with ease.",
         projectUrl: "",
         logo: "/images/apps/siemens-e-magazine/logo.png",
-        description: "",
-        googlePlayImage: false,
-        appStoreImage: false,
-        webAppImage: false,
-        githubImage: false,
+        description: `
+        <p>
+            <strong>Siemens E-Magazine</strong> is a comprehensive mobile application I developed to offer an immersive reading experience for all Siemens e-magazines. Designed to simplify the journey from discovery to reading, this app provides an all-in-one platform for avid readers and enthusiasts keen on staying updated with the latest from Siemens.
+        </p>
+        <br>
+        <p>
+            Key features of the "Siemens E-Magazine" include:
+        </p>
+        <br>
+        <ul>
+            <li>A centralized library showcasing all available Siemens e-magazines, allowing users to swiftly browse through the vast collection.</li>
+            <br>
+            <li>An intuitive search functionality that makes finding specific topics or magazine editions a breeze.</li>
+            <br>
+            <li>The favoriting feature lets users bookmark their preferred magazines, enabling quick access for future reads.</li>
+        </ul>
+        `,
+        googlePlay: "",
+        appStore: "",
+        webApp: "",
+        github: "",
         screenshots: [
             "/images/apps/siemens-e-magazine/1.png",
             "/images/apps/siemens-e-magazine/2.png",
@@ -180,11 +254,27 @@ export const projects: ProjectType[] = [
         tagline: "Mobile app for managing farm animals and tracking items in storage with ease.",
         projectUrl: "",
         logo: "/images/apps/animal-farm/logo.png",
-        description: "",
-        googlePlayImage: false,
-        appStoreImage: false,
-        webAppImage: false,
-        githubImage: false,
+        description: `
+        <p>
+            <strong>Animal Farm</strong> is a meticulously designed mobile application I crafted to revolutionize the management of farm animals and storage inventory. Aimed at streamlining farm operations, it serves as a digital companion for farmers and agricultural enthusiasts.
+        </p>
+        <br>
+        <p>
+            Noteworthy features of "Animal Farm" encompass:
+        </p>
+        <br>
+        <ul>
+            <li>An integrated dashboard showcasing intuitive graphs that provide a quick snapshot of the animal count, helping users comprehend their livestock's growth and dynamics.</li>
+            <br>
+            <li>User management capabilities ensuring that various stakeholders, from farmhands to managers, have tailored access to the app's functionalities.</li>
+            <br>
+            <li>A robust search mechanism complemented by detailed filters, making the task of locating specific animals or items in storage a straightforward affair.</li>
+        </ul>
+        `,
+        googlePlay: "",
+        appStore: "",
+        webApp: "",
+        github: "",
         screenshots: [
             "/images/apps/animal-farm/1.png",
             "/images/apps/animal-farm/2.png",
@@ -230,22 +320,7 @@ export const posts: PostType[] = [
     */
 ];
 
-import Photo from "../../public/illustrations/photos.png";
-
-export const images = [
-    {
-        id: "1",
-        src: Photo,
-    },
-    /* {
-        id: "2",
-        src: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/jobs/borda.png",
-    },
-    {
-        id: "3",
-        src: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/app/data/images/jobs/borda.png",
-    }, */
-];
+export const images = 39;
 
 export const skills: SkillProps[] = [
     { name: 'Flutter', icon: BiLogoFlutter, color: '#46D1FD' },
