@@ -28,7 +28,7 @@ Follow this guide to get this site runnning locally:
 ### Clone Repository
 
 ```js
-git clone https://github.com/Evavic44/talhakerpicci.com.git
+git clone https://github.com/talhakerpicci/talhakerpicci.com.git
 
 cd talhakerpicci.com
 
@@ -39,7 +39,12 @@ npm install
 
 ```bash
 npm run build
+npm run start
 ```
+
+## Setup
+
+Simply change variables at "app/data/data.ts", modify for yourself. For the pictures, everything is located at "public" folder.
 
 <!-- Link Refs -->
 
