@@ -1,5 +1,5 @@
 import Image from "next/image";
-import notFound from "@/public/illustrations/404.png";
+import notFound from "@/public/images/illustrations/404.png";
 import FeaturedPosts from "../pages/FeaturedPosts";
 
 type props = {

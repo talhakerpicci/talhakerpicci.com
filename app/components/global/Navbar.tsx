@@ -23,8 +23,8 @@ export default function Navbar() {
       href: "/blog",
     },
     {
-      title: "Photos",
-      href: "/photos",
+      title: "Digital Arts",
+      href: "/digital-arts",
     },
   ];
 

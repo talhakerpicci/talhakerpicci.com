@@ -10,7 +10,7 @@ type Props = {
 };
 
 const fallbackImage: string =
-  "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/projects.png";
+  "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/images/illustrations/projects.png";
 
 export function generateMetadata({ params }: Props): Metadata {
   const slug = params.project;

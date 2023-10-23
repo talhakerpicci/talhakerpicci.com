@@ -16,7 +16,7 @@ const options = {
   title: "Talha Kerpicci | Software Developer",
   description: "Talha Kerpicci is a Software Developer who is passionate about building cool apps and contributing to open source communities",
   url: "https://talhakerpicci.com",
-  ogImage: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/home.png",
+  ogImage: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/images/illustrations/home.png",
 };
 
 export const metadata: Metadata = {

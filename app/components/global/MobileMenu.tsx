@@ -37,8 +37,8 @@ export default function MobileMenu() {
       icon: HiBookmarkAlt,
     },
     {
-      title: "Photos",
-      href: "/photos",
+      title: "Digital Arts",
+      href: "/digital-arts",
       icon: HiPhotograph,
     },
   ];

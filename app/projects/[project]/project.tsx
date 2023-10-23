@@ -15,7 +15,7 @@ type Props = {
 };
 
 const fallbackImage: string =
-    "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/projects.png";
+    "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/images/illustrations/projects.png";
 
 type BadgeProps = {
     href: string;
@@ -103,19 +103,19 @@ export default function Project({ params }: Props) {
                             <p className="text-lg mt-8">{project.tagline || 'A super tagline for the mobile app'}</p>
                             <div className="flex flex-wrap justify-center lg:justify-start mt-12">
                                 {project.googlePlay ? (
-                                    <Badge href={project.googlePlay} imageSrc="/store/google-play.png" alt="Google Play" />
+                                    <Badge href={project.googlePlay} imageSrc="/images/store/google-play.png" alt="Google Play" />
                                 ) : null}
 
                                 {project.appStore ? (
-                                    <Badge href={project.appStore} imageSrc="/store/app-store.png" alt="App Store" />
+                                    <Badge href={project.appStore} imageSrc="/images/store/app-store.png" alt="App Store" />
                                 ) : null}
 
                                 {project.webApp ? (
-                                    <Badge href={project.webApp} imageSrc="/store/pwa.png" alt="Web App" />
+                                    <Badge href={project.webApp} imageSrc="/images/store/pwa.png" alt="Web App" />
                                 ) : null}
 
                                 {project.github ? (
-                                    <Badge href={project.github} imageSrc="/store/github.png" alt="Github" />
+                                    <Badge href={project.github} imageSrc="/images/store/github.png" alt="Github" />
                                 ) : null}
 
                                 {!project.googlePlay && !project.appStore && !project.webApp && !project.github ? (

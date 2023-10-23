@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Blog | Talha Kerpicci",
     url: "https://talhakerpicci.com/blog",
     description: "Read latest stories from Talha Kerpicci's Blog",
-    images: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/blog.png",
+    images: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/images/illustrations/blog.png",
   },
 };
 

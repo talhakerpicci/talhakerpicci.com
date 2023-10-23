@@ -18,7 +18,7 @@ type Props = {
 };
 
 const fallbackImage: string =
-  "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/blog.png";
+  "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/images/illustrations/blog.png";
 
 export function generateMetadata({ params }: Props): Metadata {
   const slug = params.post;

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Projects | Talha Kerpicci",
     url: "https://talhakerpicci.com/projects",
     description: "Explore projects built by Talha Kerpicci",
-    images: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/projects.png",
+    images: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/images/illustrations/projects.png",
   },
 };
 

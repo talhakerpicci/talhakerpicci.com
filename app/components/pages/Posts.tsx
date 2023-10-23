@@ -7,7 +7,7 @@ import { formatDate } from "../../utils/date";
 
 
 const fallbackImage: string =
-  "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/blog.png";
+  "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/images/illustrations/blog.png";
 
 export default function Posts() {
   return (

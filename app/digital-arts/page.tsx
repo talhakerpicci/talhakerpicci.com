@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: "Digital Arts | Talha Kerpicci",
         url: "https://talhakerpicci.com/digital-arts",
         description: "Explore digital arts by Talha Kerpicci",
-        images: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/digital-arts.png",
+        images: "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/images/illustrations/digital-arts.png",
     },
 };
 
