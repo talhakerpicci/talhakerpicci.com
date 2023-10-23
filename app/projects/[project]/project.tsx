@@ -4,8 +4,6 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { notFound } from "next/navigation";
 import CloseIcon from "@/app/components/shared/CloseIcon";
-import { PortableText } from "@portabletext/react";
-import { CustomPortableText } from "@/app/components/shared/CustomPortableText";
 import { BiExpand, BiRightArrowAlt, BiLeftArrowAlt } from "react-icons/bi";
 import { Slide } from "../../animation/Slide";
 import { projects } from "../../data/data";
@@ -19,6 +17,20 @@ type Props = {
 const fallbackImage: string =
     "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/illustrations/projects.png";
 
+type BadgeProps = {
+    href: string;
+    imageSrc: string;
+    alt: string;
+};
+
+const Badge: React.FC<BadgeProps> = ({ href, imageSrc, alt }) => (
+    <div className="w-42 flex justify-center mt-2">
+        <a href={href} target="_blank" rel="noopener noreferrer">
+            <Image src={imageSrc} alt={alt} width={0} height={0} sizes="100vw" className="badge-size" style={{ width: 'auto', height: 'auto' }} />
+        </a>
+    </div>
+);
+
 export default function Project({ params }: Props) {
     const slug = params.project;
     const project = projects.find(project => project.slug === slug);
@@ -30,7 +42,6 @@ export default function Project({ params }: Props) {
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [opacity, setOpacity] = useState(1);
-
 
     function openLightbox(index: number) {
         setCurrentImageIndex(index);
@@ -91,32 +102,31 @@ export default function Project({ params }: Props) {
                             <h1 className="font-incognito font-black text-5xl">{project.name}</h1>
                             <p className="text-lg mt-8">{project.tagline || 'A super tagline for the mobile app'}</p>
                             <div className="flex flex-wrap justify-center lg:justify-start mt-12">
-                                {project.googlePlayImage &&
-                                    <div className="w-42 flex justify-center mt-2">
-                                        <Image src="/store/google-play.png" alt="Google Play" width={0} height={0} sizes="100vw" className="badge-size" style={{ width: 'auto', height: 'auto' }} />
-                                    </div>
-                                }
-                                {project.appStoreImage &&
-                                    <div className="w-42 flex justify-center mt-2">
-                                        <Image src="/store/app-store.png" alt="App Store" width={0} height={0} sizes="100vw" className="badge-size" style={{ width: 'auto', height: 'auto' }} />
-                                    </div>
-                                }
-                                {project.webAppImage &&
-                                    <div className="w-42 flex justify-center mt-2">
-                                        <Image src="/store/pwa.png" alt="Web App" width={0} height={0} sizes="100vw" className="badge-size" style={{ width: 'auto', height: 'auto' }} />
-                                    </div>
-                                }
-                                {project.githubImage &&
-                                    <div className="w-42 flex justify-center mt-2">
-                                        <Image src="/store/github.png" alt="Github" width={0} height={0} sizes="100vw" className="badge-size" style={{ width: 'auto', height: 'auto' }} />
-                                    </div>
-                                }
+                                {project.googlePlay ? (
+                                    <Badge href={project.googlePlay} imageSrc="/store/google-play.png" alt="Google Play" />
+                                ) : null}
+
+                                {project.appStore ? (
+                                    <Badge href={project.appStore} imageSrc="/store/app-store.png" alt="App Store" />
+                                ) : null}
+
+                                {project.webApp ? (
+                                    <Badge href={project.webApp} imageSrc="/store/pwa.png" alt="Web App" />
+                                ) : null}
+
+                                {project.github ? (
+                                    <Badge href={project.github} imageSrc="/store/github.png" alt="Github" />
+                                ) : null}
+
+                                {!project.googlePlay && !project.appStore && !project.webApp && !project.github ? (
+                                    <div className="bg-transparent h-[52px]"></div>
+                                ) : null}
                             </div>
 
                         </div>
                     </div>
 
-                    <h2 className="font-black text-2xl mt-32 mb-6 ">Screenshots</h2>
+                    <h2 className="font-black text-3xl mt-32 mb-6 ">Screenshots</h2>
                     <div className="flex space-x-6 overflow-x-auto py-4 scrollbar-hide">
                         {project.screenshots && project.screenshots.map((screenshot, index) => (
                             <div key={index} className="relative flex-shrink-0" style={{ width: '200px' }}>
@@ -145,11 +155,9 @@ export default function Project({ params }: Props) {
                             <div className="absolute left-4 top-4 text-white text-xl">
                                 {currentImageIndex + 1}/{project.screenshots.length}
                             </div>
-
                             <div className="absolute left-4 top-1/2 transform -translate-y-1/2" onClick={(e) => e.stopPropagation()}>
                                 <BiLeftArrowAlt size={50} onClick={prevImage} className="text-white text-3xl cursor-pointer" />
                             </div>
-
                             <Image
                                 style={{ opacity: opacity }}
                                 src={project.screenshots[currentImageIndex]}
@@ -160,7 +168,6 @@ export default function Project({ params }: Props) {
                                 onClick={(e) => e.stopPropagation()}
                             />
 
-
                             <div className="absolute right-4 top-1/2 transform -translate-y-1/2" onClick={(e) => e.stopPropagation()}>
                                 <BiRightArrowAlt size={50} onClick={nextImage} className="text-white text-3xl cursor-pointer" />
                             </div>
@@ -168,12 +175,11 @@ export default function Project({ params }: Props) {
                         </div>
                     )}
 
-                    <div className="mt-10 dark:text-zinc-400 text-zinc-600 leading-relaxed">
-                        <PortableText
-                            value={project.description as any}
-                            components={CustomPortableText}
-                        />
-                    </div>
+                    <h2 className="font-black text-3xl mt-24">Description</h2>
+                    <div
+                        className="project-description mt-10 dark:text-zinc-400 text-zinc-600 leading-relaxed"
+                        dangerouslySetInnerHTML={{ __html: project.description }}
+                    />
                 </div>
             </Slide>
         </main>
