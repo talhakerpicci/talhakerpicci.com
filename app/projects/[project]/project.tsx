@@ -94,7 +94,7 @@ export default function Project({ params }: Props) {
             <Slide>
                 <div className="max-w-5xl ml-4 lg:ml-20 py-10">
                     <div className="flex flex-col lg:flex-row items-center mb-6 space-y-4 lg:space-y-0 lg:space-x-8">
-                        <div className="bg-purple-500 rounded-3xl w-40 h-40 lg:w-auto lg:h-auto">
+                        <div className="rounded-3xl w-40 h-40 lg:w-auto lg:h-auto">
                             <Image src={project.logo} alt="App Logo" width={222} height={222} className="lg:w-222 lg:h-222 rounded-3xl" />
                         </div>
 
