@@ -96,6 +96,7 @@ export default function DigitalArts() {
                                 onClick={() => openLightbox(image.id)}
                                 fill
                                 style={{ objectFit: "cover" }}
+                                className="rounded-xl"
                             />
                         </div>
                     ))}
