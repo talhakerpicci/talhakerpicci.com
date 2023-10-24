@@ -109,7 +109,7 @@ export const projects: ProjectType[] = [
         id: "4",
         name: "House of Auctions",
         slug: "house-of-auctions",
-        tagline: "Mobile app for managing farm animals and tracking items in storage with ease.",
+        tagline: "Auction app with real-time bidding, direct chats, and a user-centric design.",
         projectUrl: "",
         logo: "/images/apps/house-of-auctions/logo.png",
         description: `
@@ -158,7 +158,7 @@ export const projects: ProjectType[] = [
         id: "3",
         name: "Brand Ambassador",
         slug: "brand-ambassador",
-        tagline: "Mobile app for managing farm animals and tracking items in storage with ease.",
+        tagline: "App merging company feeds with rewards, boosting reach.",
         projectUrl: "",
         logo: "/images/apps/brand-ambassador/logo.png",
         description: `
@@ -207,7 +207,7 @@ export const projects: ProjectType[] = [
         id: "2",
         name: "Siemens E-Magazine",
         slug: "siemens-e-magazine",
-        tagline: "Mobile app for managing farm animals and tracking items in storage with ease.",
+        tagline: "Siemens E-Magazine: Browse, search, and save Siemens digital editions.",
         projectUrl: "",
         logo: "/images/apps/siemens-e-magazine/logo.png",
         description: `
@@ -251,7 +251,7 @@ export const projects: ProjectType[] = [
         id: "1",
         name: "Animal Farm",
         slug: "animal-farm",
-        tagline: "Mobile app for managing farm animals and tracking items in storage with ease.",
+        tagline: "Mobile app for farm animal management and storage tracking.",
         projectUrl: "",
         logo: "/images/apps/animal-farm/logo.png",
         description: `
