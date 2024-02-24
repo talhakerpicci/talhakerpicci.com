@@ -320,7 +320,7 @@ export const posts: PostType[] = [
     */
 ];
 
-export const images = 60;
+export const images = 9;
 
 export const skills: SkillProps[] = [
     { name: 'Flutter', icon: BiLogoFlutter, color: '#46D1FD' },
