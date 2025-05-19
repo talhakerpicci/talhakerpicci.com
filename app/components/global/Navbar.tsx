@@ -22,10 +22,10 @@ export default function Navbar() {
       title: "Blog",
       href: "/blog",
     },
-    {
+    /* {
       title: "Digital Arts",
       href: "/digital-arts",
-    },
+    }, */
   ];
 
   return (

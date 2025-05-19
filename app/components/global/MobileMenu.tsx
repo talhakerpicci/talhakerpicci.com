@@ -36,11 +36,11 @@ export default function MobileMenu() {
       href: "/blog",
       icon: HiBookmarkAlt,
     },
-    {
+    /* {
       title: "Digital Arts",
       href: "/digital-arts",
       icon: HiPhotograph,
-    },
+    }, */
   ];
 
   const onToggleNav = () => {
