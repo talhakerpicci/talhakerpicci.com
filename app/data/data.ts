@@ -354,12 +354,12 @@ export const socialLinks = [
         url: "https://linkedin.com/in/talha-kerpicci",
         icon: BiLogoLinkedinSquare,
     },
-    {
+    /* {
         id: 4,
         name: "Instagram",
         url: "https://instagram.com/talhakerpicci",
         icon: BiLogoInstagram,
-    },
+    }, */
     {
         id: 5,
         name: "Youtube",
