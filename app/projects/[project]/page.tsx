@@ -4,16 +4,16 @@ import { projects } from "../../data/data";
 import Project from "./project";
 
 type Props = {
-  params: {
+  params: Promise<{
     project: string;
-  };
+  }>;
 };
 
 const fallbackImage: string =
   "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/images/illustrations/projects.png";
 
-export function generateMetadata({ params }: Props): Metadata {
-  const slug = params.project;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { project: slug } = await params;
   const project = projects.find(project => project.slug === slug);
 
   if (!project) {
@@ -35,11 +35,12 @@ export function generateMetadata({ params }: Props): Metadata {
 }
 
 
-export default function Page({ params }: Props) {
+export default async function Page({ params }: Props) {
+  const { project } = await params;
   return (
     <div>
       <Project params={{
-        project: params.project
+        project: project
       }} />
     </div>
   );
