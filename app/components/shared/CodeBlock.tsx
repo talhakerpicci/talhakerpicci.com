@@ -1,4 +1,5 @@
-import Refractor from "react-refractor";
+import { Refractor } from "react-refractor";
+import { refractor } from "refractor";
 import js from "refractor/lang/javascript";
 import ts from "refractor/lang/typescript";
 import tsx from "refractor/lang/tsx";
@@ -16,20 +17,20 @@ import json from "refractor/lang/json";
 import { BiCopy } from "react-icons/bi";
 
 // Supported languages: https://prismjs.com/#supported-languages
-Refractor.registerLanguage(js);
-Refractor.registerLanguage(ts);
-Refractor.registerLanguage(jsx);
-Refractor.registerLanguage(tsx);
-Refractor.registerLanguage(sql);
-Refractor.registerLanguage(bash);
-Refractor.registerLanguage(markdown);
-Refractor.registerLanguage(css);
-Refractor.registerLanguage(scss);
-Refractor.registerLanguage(python);
-Refractor.registerLanguage(html);
-Refractor.registerLanguage(yaml);
-Refractor.registerLanguage(graphql);
-Refractor.registerLanguage(json);
+refractor.register(js);
+refractor.register(ts);
+refractor.register(jsx);
+refractor.register(tsx);
+refractor.register(sql);
+refractor.register(bash);
+refractor.register(markdown);
+refractor.register(css);
+refractor.register(scss);
+refractor.register(python);
+refractor.register(html);
+refractor.register(yaml);
+refractor.register(graphql);
+refractor.register(json);
 
 type codeTypes = {
   value: {

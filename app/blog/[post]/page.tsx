@@ -12,16 +12,16 @@ import FeaturedPosts from "../../components/pages/FeaturedPosts";
 import { Slide } from "../../animation/Slide";
 
 type Props = {
-  params: {
+  params: Promise<{
     post: string;
-  };
+  }>;
 };
 
 const fallbackImage: string =
   "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/images/illustrations/blog.png";
 
-export function generateMetadata({ params }: Props): Metadata {
-  const slug = params.post;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { post: slug } = await params;
   const post = posts.find(post => post.slug === slug);
 
   if (!post) {
@@ -63,8 +63,8 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function Post({ params }: Props) {
-  const slug = params.post;
+export default async function Post({ params }: Props) {
+  const { post: slug } = await params;
   const post = posts.find(post => post.slug === slug);
 
   if (!post) {
@@ -176,7 +176,7 @@ export default function Post({ params }: Props) {
               <h3 className="text-xl font-semibold tracking-tight mb-4">
                 Featured
               </h3>
-              <FeaturedPosts params={params.post} />
+              <FeaturedPosts params={slug} />
             </section>
           </aside>
         </Slide>
