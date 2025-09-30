@@ -10,7 +10,6 @@
 # Tech Stack
 
 - [NextJS][nextjs] - UI framework
-- [Vercel][vercel] - Hosting and Deployment
 - [TailwindCSS][tailwind] / CSS - Styling and UI
 - [Next Themes][nexttheme]: Color Theme
 - [React Refractor][reactrefractor]: Syntax Highlighting
@@ -49,7 +48,6 @@ Simply change variables at "app/data/data.ts", modify for yourself. For the pict
 <!-- Link Refs -->
 
 [nextjs]: https://nextjs.org
-[vercel]: https://vercel.com
 [tailwind]: https://tailwindcss.com
 [nexttheme]: https://github.com/pacocoursey/next-themes
 [reactrefractor]: https://github.com/rexxars/react-refractor

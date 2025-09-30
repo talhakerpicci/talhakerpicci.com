@@ -1,5 +1,4 @@
 import Image from "next/image";
-import vercellogo from "@/public/icons/vercel.svg";
 import nextjslogo from "@/public/icons/nextjs.svg";
 
 export default function Footer() {
@@ -23,22 +22,6 @@ export default function Footer() {
                   alt="nextjs logo"
                 />{" "}
                 Next.js
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://vercel.com"
-                rel="noreferrer noopener"
-                target="_blank"
-                className="flex items-center gap-x-2 dark:text-white text-zinc-600 hover:underline"
-              >
-                <Image
-                  src={vercellogo}
-                  width={20}
-                  height={20}
-                  alt="vercel logo"
-                />{" "}
-                Vercel
               </a>
             </li>
           </ul>
