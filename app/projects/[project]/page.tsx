@@ -12,6 +12,12 @@ type Props = {
 const fallbackImage: string =
   "https://raw.githubusercontent.com/talhakerpicci/talhakerpicci.com/main/public/images/illustrations/projects.png";
 
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    project: project.slug,
+  }));
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { project: slug } = await params;
   const project = projects.find(project => project.slug === slug);
